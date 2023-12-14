@@ -1,7 +1,8 @@
-package com.handle.advice;
+package com.handle.controller;
 
 
 import lombok.extern.slf4j.Slf4j;
+import org.example.common.advice.RestaurantServiceGlobalExceptionHandler;
 import org.example.common.dto.CustomErrorResponse;
 import org.example.common.dto.GlobalErrorCode;
 import org.example.common.exception.OrderNotFoundException;
@@ -11,19 +12,20 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
+//@ComponentScan(basePackages="org.example.common.advice")
 @Slf4j
-public class RestaurantServiceGlobalExceptionHandler {
+public class ServiceGlobalExceptionHandler extends RestaurantServiceGlobalExceptionHandler {
 
-    @ExceptionHandler(OrderNotFoundException.class)
-    public ResponseEntity<?> handleOrderNotFoundException(OrderNotFoundException ex){
+   /* @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<?> handleIllegalException(IllegalArgumentException ex){
         CustomErrorResponse errorResponse= CustomErrorResponse.builder()
-                .status(HttpStatus.NOT_FOUND)
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .errorCode(GlobalErrorCode.ERROR_ORDER_NOT_FOUND)
                 .errorMessage(ex.getMessage())
                 .build()  ;
         log.error("RestaurantServiceGlobalExceptionHandler::handleOrderNotFoundException exception caught {}",ex.getMessage());
         return ResponseEntity.internalServerError().body(errorResponse);
-    }
+    }*/
 
 //    @ExceptionHandler(Exception.class)
 //    public ResponseEntity<?> handleGenericException(Exception ex){
