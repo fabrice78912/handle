@@ -1,7 +1,6 @@
 /Users/fabricefoko/Documents/Projets_JAVA/microservice-exception-handling/swiggy-app/src/main/java/com/handle/config/SwiggyAppConfig.java
-/Users/fabricefoko/Documents/Projets_JAVA/microservice-exception-handling/swiggy-app/src/main/java/com/handle/advice/SwiggyServiceGlobalExceptionHandler.java
 /Users/fabricefoko/Documents/Projets_JAVA/microservice-exception-handling/swiggy-app/src/main/java/com/handle/SwiggyAppApplication.java
 /Users/fabricefoko/Documents/Projets_JAVA/microservice-exception-handling/swiggy-app/src/main/java/com/handle/controller/SwiggyAppController.java
-/Users/fabricefoko/Documents/Projets_JAVA/microservice-exception-handling/swiggy-app/src/main/java/com/handle/advice/RestaurantServiceGlobalExceptionHandler.java
 /Users/fabricefoko/Documents/Projets_JAVA/microservice-exception-handling/swiggy-app/src/main/java/com/handle/client/RestaurantServiceClient.java
+/Users/fabricefoko/Documents/Projets_JAVA/microservice-exception-handling/swiggy-app/src/main/java/com/handle/advise/SwiggyServiceGlobalExceptionHandler.java
 /Users/fabricefoko/Documents/Projets_JAVA/microservice-exception-handling/swiggy-app/src/main/java/com/handle/service/SwiggyAppService.java
