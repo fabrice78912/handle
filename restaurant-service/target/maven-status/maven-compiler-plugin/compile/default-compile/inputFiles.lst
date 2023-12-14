@@ -1,6 +1,4 @@
 /Users/fabricefoko/Documents/Projets_JAVA/microservice-exception-handling/restaurant-service/src/main/java/com/handle/service/RestaurantService.java
-/Users/fabricefoko/Documents/Projets_JAVA/microservice-exception-handling/restaurant-service/src/main/java/com/handle/dto/GlobalErrorCode.java
 /Users/fabricefoko/Documents/Projets_JAVA/microservice-exception-handling/restaurant-service/src/main/java/com/handle/RestaurantServiceApplication.java
 /Users/fabricefoko/Documents/Projets_JAVA/microservice-exception-handling/restaurant-service/src/main/java/com/handle/dao/RestaurantOrderDAO.java
-/Users/fabricefoko/Documents/Projets_JAVA/microservice-exception-handling/restaurant-service/src/main/java/com/handle/dto/CustomErrorResponse.java
 /Users/fabricefoko/Documents/Projets_JAVA/microservice-exception-handling/restaurant-service/src/main/java/com/handle/controller/RestaurantController.java

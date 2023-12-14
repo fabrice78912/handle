@@ -3,18 +3,22 @@ package com.handle.dao;
 //import com.javatechie.dto.OrderResponseDTO;
 import org.example.common.dto.OrderResponseDTO;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component
+@Repository
 public class RestaurantOrderDAO {
 
 
-    public OrderResponseDTO getOrders(String orderId) {
-        return generateRandomOrders().get(orderId);
+    public OrderResponseDTO getOrder(String orderId) {
+        return generateRandomOrders().containsKey(orderId)?
+                generateRandomOrders().get(orderId):
+                null;
     }
+
 
     private Map<String, OrderResponseDTO> generateRandomOrders() {
         Map<String, OrderResponseDTO> orderMap = new HashMap<>();
@@ -23,10 +27,5 @@ public class RestaurantOrderDAO {
         orderMap.put("37jbd832", new OrderResponseDTO("37jbd832", "PANEER BUTTER MASALA", 1, 325, new Date(), "DELIVERED", 0));
         return orderMap;
     }
-
-    public static void main(String[] args) {
-        System.out.println("hyderabadi dum biryani".toUpperCase());
-    }
-
 
 }

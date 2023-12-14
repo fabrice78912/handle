@@ -1,7 +1,4 @@
-com/handle/dto/CustomErrorResponse$CustomErrorResponseBuilder.class
 com/handle/controller/RestaurantController.class
 com/handle/dao/RestaurantOrderDAO.class
 com/handle/RestaurantServiceApplication.class
-com/handle/dto/CustomErrorResponse.class
-com/handle/dto/GlobalErrorCode.class
 com/handle/service/RestaurantService.class
