@@ -4,7 +4,9 @@ package org.example.common.advice;
 import lombok.extern.slf4j.Slf4j;
 import org.example.common.dto.CustomErrorResponse;
 import org.example.common.dto.GlobalErrorCode;
+import org.example.common.exception.InternalServerErrorException;
 import org.example.common.exception.OrderNotFoundException;
+import org.example.common.exception.UserNotFoundException;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,14 +29,25 @@ public class RestaurantServiceGlobalExceptionHandler {
         return ResponseEntity.internalServerError().body(errorResponse);
     }
 
-//    @ExceptionHandler(Exception.class)
-//    public ResponseEntity<?> handleGenericException(Exception ex){
-//        CustomErrorResponse errorResponse= CustomErrorResponse.builder()
-//                .status(HttpStatus.INTERNAL_SERVER_ERROR)
-//                .errorCode(GlobalErrorCode.GENERIC_ERROR)
-//                .errorMessage(ex.getMessage())
-//                .build()  ;
-//        log.error("RestaurantServiceGlobalExceptionHandler::handleGenericException exception caught {}",ex.getMessage());
-//        return ResponseEntity.internalServerError().body(errorResponse);
-//    }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<?> handleOrderNotFoundException(UserNotFoundException ex){
+        CustomErrorResponse errorResponse= CustomErrorResponse.builder()
+                .status(HttpStatus.NOT_FOUND)
+                .errorMessage(ex.getMessage())
+                .build()  ;
+        log.error("RestaurantServiceGlobalExceptionHandler::handleOrderNotFoundException exception caught {}",ex.getMessage());
+        return ResponseEntity.ok(errorResponse);
+    }
+
+    @ExceptionHandler(InternalServerErrorException.class)
+    public ResponseEntity<?> handleGenericException(Exception ex){
+        CustomErrorResponse errorResponse= CustomErrorResponse.builder()
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .errorCode(GlobalErrorCode.GENERIC_ERROR)
+                .errorMessage(ex.getMessage())
+                .build()  ;
+        log.error("RestaurantServiceGlobalExceptionHandler::handleGenericException exception caught {}",ex.getMessage());
+        return ResponseEntity.internalServerError().body(errorResponse);
+    }
 }

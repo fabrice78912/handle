@@ -1,25 +1,20 @@
 package com.handle.advise;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.example.common.dto.CustomErrorResponse;
-import org.example.common.exception.SwiggyServiceException;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.example.common.advice.SwiggyServiceGlobalExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
 @Slf4j
-public class SwiggyServiceGlobalExceptionHandler {
+public class ServiceGlobalExceptionHandler extends SwiggyServiceGlobalExceptionHandler {
 
-    @ExceptionHandler(SwiggyServiceException.class)
+  /*  @ExceptionHandler(SwiggyServiceException.class)
     public ResponseEntity<?> handleSwiggyServiceException(SwiggyServiceException ex) throws JsonProcessingException {
         log.error("SwiggyServiceGlobalExceptionHandler::handleSwiggyServiceException exception caught {}",ex.getMessage());
         CustomErrorResponse errorResponse = new ObjectMapper().readValue(ex.getMessage(), CustomErrorResponse.class);
         return ResponseEntity.internalServerError().body(errorResponse);
     }
-
+*/
 //    @ExceptionHandler(Exception.class)
 //    public ResponseEntity<?> handleGenericException(Exception ex){
 //        CustomErrorResponse errorResponse= CustomErrorResponse.builder()
